@@ -18,15 +18,15 @@ const About: NextPage = () => {
           <PageStyles.Title>About</PageStyles.Title>
           <p>
             Want to know the type of pushup to do to make you look like a Greek
-            god in a month with a bit of grit and determination? Well you're in
-            the wrong place.
+            god in a month with a bit of grit and determination? Well
+            you&apos;re in the wrong place.
           </p>
           <p>
             Whiteboard Fitness is a blog that aims to deliver fitness content
             that is realistic, attainable and honest. Not the crap you see on
             TikTok by some shredded 20 year old full of Trenbolone telling you
             that if you do a few situps pushup and pullups each day you will
-            look Chris Hemsworth's Thor in a few months, you wont.
+            look Chris Hemsworth&apos;s Thor in a few months, you wont.
           </p>
           <p>
             Most of this blog will consist of the little health and Fitness

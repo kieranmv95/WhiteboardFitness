@@ -68,7 +68,7 @@ const PercentageCalculator = () => {
                 if (!showValuesUnder50 && percentage < 50) return null;
 
                 return (
-                  <S.NumbersGridItem>
+                  <S.NumbersGridItem key={e.toString()}>
                     <S.NumbersGridPercentage>
                       {percentage}%
                     </S.NumbersGridPercentage>
