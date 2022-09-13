@@ -5,6 +5,7 @@ type ButtonProps = {
 };
 
 export const Button = styled.button<ButtonProps>`
+  cursor: pointer;
   background: ${({ theme }) => theme.colors.secondary};
   color: ${({ theme }) => theme.colors.bg};
   border-radius: ${({ theme }) => theme.borderRadius.xs};
