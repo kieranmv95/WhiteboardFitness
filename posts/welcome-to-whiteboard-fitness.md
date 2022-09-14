@@ -8,9 +8,9 @@ type: "news"
 published: true
 ---
 
-Welcome to Whiteboard Fitness. The aim of this blog is to review, blog and chat about anythign fitness related! This post is simply to say Hi and thanks for checking out the site at this early stage. There's still lots going on and pages will be changing regularly so keep an eye out on things! The headline image picture has absolutely no context for this blog post I just wanted to put a picture of my throwing weight around in
+Welcome to Whiteboard Fitness. The aim of this blog is to review, blog and chat about anything fitness related! This post is simply to say Hi and thanks for checking out the site at this early stage. There's still lots going on and pages will be changing regularly so keep an eye out on things! The headline image picture has absolutely no context for this blog post I just wanted to put a picture of my throwing weight around.
 
-## What can we expect
+## What can you expect
 
 Although Whiteboard Fitness is new we have a lot of plans underway. Below are some of the things you can expect in the short term, but theres some **_secret things_** in development too
 
