@@ -2,10 +2,12 @@ import fs from "fs";
 import matter from "gray-matter";
 import md from "markdown-it";
 import { Frontmatter } from "../../types/Frontmatter";
-
-import * as PageStyles from "../../styles/pages/shared";
+import Image from "next/image";
 import { NextPage } from "next";
 import Head from "next/head";
+
+import * as PageStyles from "../../styles/pages/shared";
+import * as S from "../../styles/pages/blogSlug";
 
 type PostPageProps = {
   frontmatter: Frontmatter;
@@ -23,6 +25,14 @@ const PostPage: NextPage<PostPageProps> = ({ frontmatter, content }) => {
       <main>
         <PageStyles.Container>
           <PageStyles.Title>{frontmatter.title}</PageStyles.Title>
+          <S.ImageHolder>
+            <Image
+              src={frontmatter.img}
+              alt={frontmatter.title}
+              layout="fill"
+              objectFit="cover"
+            />
+          </S.ImageHolder>
           <PageStyles.Post
             dangerouslySetInnerHTML={{ __html: md().render(content) }}
           />
