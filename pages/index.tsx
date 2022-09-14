@@ -35,6 +35,7 @@ const Home: NextPage<{ posts: PostData[]; featured: PostData }> = ({
           <PageStyles.ArticlesGrid>
             {posts.map(({ slug, frontmatter }) => (
               <MiniBlogCard
+                key={slug}
                 title={frontmatter.title}
                 link={`blog/${slug}`}
                 imageSrc={frontmatter.img}
