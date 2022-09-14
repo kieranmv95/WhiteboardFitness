@@ -13,7 +13,7 @@ const initialState = {
   fullScreen: false,
 } as RepRoundState;
 
-const counterSlice = createSlice({
+const repRoundSlice = createSlice({
   name: "repRound",
   initialState,
   reducers: {
@@ -34,6 +34,6 @@ const counterSlice = createSlice({
 });
 
 export const { incrementRep, incrementRound, reset, toggleFullScreen } =
-  counterSlice.actions;
+  repRoundSlice.actions;
 
-export default counterSlice.reducer;
+export default repRoundSlice.reducer;

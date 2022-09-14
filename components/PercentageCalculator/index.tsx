@@ -1,16 +1,24 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import {
+  update,
+  toggleRoundToWhole,
+  toggleShowValuesUnder50,
+  changePercentageIntervals,
+} from "../../redux/slice/percentageCalc";
 import Button from "../Button";
 import Input from "../Input";
 import * as S from "./styles";
 
 const PercentageCalculator = () => {
-  const [value, setValue] = useState("");
-  const [roundToWhole, setRoundToWhole] = useState(false);
-  const [percentageIntervals, setPercentageIntervals] = useState(10);
-  const [showValuesUnder50, setShowValuesUnder50] = useState(false);
+  const dispatch = useDispatch();
+  const { value, settings } = useSelector(
+    (state: RootState) => state.percentageCalc
+  );
 
   const round = (weight: number): number => {
-    if (roundToWhole) {
+    if (settings.roundToWhole) {
       return Math.round(weight);
     } else {
       return Math.round(weight * 2) / 2;
@@ -25,7 +33,7 @@ const PercentageCalculator = () => {
           <Input
             placeholder="100"
             type="number"
-            onChange={(e) => setValue(e.target.value)}
+            onChange={(e) => dispatch(update(e.target.value))}
             value={value}
           />
         </label>
@@ -36,36 +44,35 @@ const PercentageCalculator = () => {
         <>
           <S.RoundingCopy>
             All results are rounded to the nearest{" "}
-            {roundToWhole ? "whole number" : "0.5kg"}
+            {settings.roundToWhole ? "whole number" : "0.5kg"}
           </S.RoundingCopy>
           <S.Buttons>
-            <Button
-              onClick={() =>
-                setPercentageIntervals(percentageIntervals === 10 ? 5 : 10)
-              }
-            >
-              {percentageIntervals === 10
+            <Button onClick={() => dispatch(changePercentageIntervals())}>
+              {settings.percentageIntervals === 10
                 ? "Show 5% Increments"
                 : "Hide 5 increments%"}
             </Button>
-            <Button onClick={() => setShowValuesUnder50(!showValuesUnder50)}>
-              {showValuesUnder50 ? "Hide under 50%" : "Show under 50%"}
+            <Button onClick={() => dispatch(toggleShowValuesUnder50())}>
+              {settings.showValuesUnder50 ? "Hide under 50%" : "Show under 50%"}
             </Button>
-            <Button onClick={() => setRoundToWhole(!roundToWhole)}>
-              {roundToWhole
+            <Button onClick={() => dispatch(toggleRoundToWhole())}>
+              {settings.roundToWhole
                 ? "Round to nearest 0.5kg"
                 : "Round to whole numbers"}
             </Button>
           </S.Buttons>
           <S.NumbersGrid>
-            {Array.from(Array(100 / percentageIntervals), (_, x) => x + 1)
+            {Array.from(
+              Array(100 / settings.percentageIntervals),
+              (_, x) => x + 1
+            )
               .reverse()
               .map((e) => {
-                if (e * percentageIntervals === 0) return null;
-                const percentage = e * percentageIntervals;
+                if (e * settings.percentageIntervals === 0) return null;
+                const percentage = e * settings.percentageIntervals;
                 const weight = (Number(value) / 100) * percentage;
 
-                if (!showValuesUnder50 && percentage < 50) return null;
+                if (!settings.showValuesUnder50 && percentage < 50) return null;
 
                 return (
                   <S.NumbersGridItem key={e.toString()}>
