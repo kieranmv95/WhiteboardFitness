@@ -1,11 +1,17 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import * as PageStyles from "../styles/pages/shared";
-import welcomeImg from "../assets/images/blog/welcome-to-whiteboard-fitness/cleanandjerk.jpeg";
 import MiniBlogCard from "../components/Blog/MiniBlogCard";
 import FeaturedBlogCard from "../components/Blog/FeaturedBlogCard";
+import fs from "fs";
+import matter from "gray-matter";
 
-const Home: NextPage = () => {
+import * as PageStyles from "../styles/pages/shared";
+import { PostData } from "../types/PostData";
+
+const Home: NextPage<{ posts: PostData[]; featured: PostData }> = ({
+  posts,
+  featured,
+}) => {
   return (
     <>
       <Head>
@@ -17,26 +23,53 @@ const Home: NextPage = () => {
       <main>
         <PageStyles.Container>
           <FeaturedBlogCard
-            title="Welcome to Whiteboard Fitness"
-            description="The first post from Whiteboard Fitness and what you can expect in the future"
-            link="/blog/welcome-to-whiteboard-fitness"
-            author="Kieran Venison"
-            imageData={welcomeImg}
+            title={featured.frontmatter.title}
+            description={featured.frontmatter.description}
+            link={`blog/${featured.slug}`}
+            author={featured.frontmatter.author}
+            imageSrc={featured.frontmatter.img}
           />
 
-          <h2>Blogs</h2>
+          <h2>Posts</h2>
 
           <PageStyles.ArticlesGrid>
-            <MiniBlogCard
-              title="Welcome to The Whiteboard Fitness"
-              link="/blog/welcome-to-whiteboard-fitness"
-              imageData={welcomeImg}
-            />
+            {posts.map(({ slug, frontmatter }) => (
+              <MiniBlogCard
+                title={frontmatter.title}
+                link={`blog/${slug}`}
+                imageSrc={frontmatter.img}
+              />
+            ))}
           </PageStyles.ArticlesGrid>
         </PageStyles.Container>
       </main>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const files = fs.readdirSync("posts");
+
+  const posts = files.map((filename) => {
+    const slug = filename.replace(".md", "");
+    const readFile = fs.readFileSync(`posts/${filename}`, "utf-8");
+
+    const { data: frontmatter } = matter(readFile);
+
+    return {
+      slug,
+      frontmatter,
+    };
+  });
+
+  return {
+    props: {
+      featured: posts.find(
+        (post) => post.frontmatter.type === "news" && post.frontmatter.published
+      ),
+      posts: posts.filter((post) => post.frontmatter.published),
+    },
+  };
+}
 
 export default Home;

@@ -15,7 +15,7 @@ const Tools: NextPage = () => {
 
       <main>
         <PageStyles.Container>
-          <PageStyles.Title>Percentage of calculator</PageStyles.Title>
+          <PageStyles.Title>Percentage breakdown calculator</PageStyles.Title>
           <p>
             Enter your one rep max in KG into the calculator below to get an
             insight into what the percentage breakdown of your one rep max is.

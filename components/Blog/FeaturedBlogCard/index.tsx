@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import * as S from "./styles";
 
@@ -7,7 +7,7 @@ type FeaturedBlogCardProps = {
   description: string;
   link: string;
   author: string;
-  imageData: StaticImageData;
+  imageSrc: string;
 };
 
 const FeaturedBlogCard = ({
@@ -15,13 +15,13 @@ const FeaturedBlogCard = ({
   description,
   link,
   author,
-  imageData,
+  imageSrc,
 }: FeaturedBlogCardProps) => (
   <Link href={link} passHref>
     <S.FeaturedBlogCardWrapper>
       <S.ImageHolder>
         <Image
-          src={imageData}
+          src={imageSrc}
           alt="Picture of the author"
           layout="fill"
           objectFit="cover"

@@ -9,6 +9,7 @@ const theme: DefaultTheme = {
     main: "#e74c3c",
     secondary: "#273848",
     secondaryLight: "#4f769b",
+    disabled: "#dbdbdb",
   },
   font: {
     weight: {

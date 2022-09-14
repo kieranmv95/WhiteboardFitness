@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { device } from "../../../styles/media";
 
 export const MiniBlogCardWrapper = styled.div`
   cursor: pointer;
@@ -13,9 +12,14 @@ export const ImageHolder = styled.div`
 `;
 
 export const Title = styled.h2`
-  transition: all 0.15s ease-in-out;
   font-size: 1rem;
   line-height: 1.15;
   font-weight: ${({ theme }) => theme.font.weight.bold};
   margin: 0.5rem 0 0 0;
+`;
+
+export const Detail = styled.p`
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0 0;
+  line-height: 1.25;
 `;

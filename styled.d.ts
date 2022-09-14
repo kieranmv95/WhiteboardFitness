@@ -9,6 +9,7 @@ declare module "styled-components" {
       main: string;
       secondary: string;
       secondaryLight: string;
+      disabled: string;
     };
     font: {
       weight: {

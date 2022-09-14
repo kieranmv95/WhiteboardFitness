@@ -3,6 +3,7 @@ import Link from "next/link";
 import Head from "next/head";
 
 import * as PageStyles from "../../styles/pages/shared";
+import * as S from "../../styles/pages/tools";
 import { Button } from "../../components/Button/styles";
 
 const Tools: NextPage = () => {
@@ -18,34 +19,37 @@ const Tools: NextPage = () => {
         <PageStyles.Container>
           <PageStyles.Title>Tools</PageStyles.Title>
 
-          <div>
-            <h2>Percentage Calculator</h2>
+          <S.ToolCard>
+            <h2>Percentage breakdown calculator</h2>
             <p>
-              Do yoy know your 1rep max and want to do a workout based off a
-              percentage weight. Then this tool makes your life much easier.
+              Do you know your 1rep max and want to do a workout based off a
+              percentage of that weight? Then this tool makes your life much
+              easier.
             </p>
             <p>
-              Add your 1RM into the calculator and then you will see a list of %
-              breakdowns of that weight. I use it to calculator weights for
-              wendler cycles but use it as you please
+              Add your 1RM into the calculator and then you will see a list of
+              percentage breakdowns of that weight. I use it to calculator
+              weights for wendler cycles but you can use it as you please. Some
+              people use it to figure out percentages of their bodyweight!
             </p>
             <Link href="/tools/percentage-calculator">
               <Button>Go to Percentage Calculator</Button>
             </Link>
-          </div>
-          <PageStyles.Title>Tools Coming Soon</PageStyles.Title>
+          </S.ToolCard>
+          <PageStyles.Title>More tools coming soon</PageStyles.Title>
           <p>
             These tools are currently under development so please check back
             soon
           </p>
-          <div>
+          <S.ToolCard>
             <h2>WOD Timer</h2>
             <p>
               This is a simple yet advanced WOD timer to help you keep tabs on
               your workout. Setup a simple countdown or countup or get fancy and
               setup rounds and rest periods with the highly customisable timer.
             </p>
-          </div>
+            <Button disabled>Go to Percentage Calculator</Button>
+          </S.ToolCard>
         </PageStyles.Container>
       </main>
     </>

@@ -4,11 +4,12 @@ type ButtonProps = {
   onClick: () => void;
   children: React.ReactNode;
   fullWidth?: boolean;
+  disabled?: boolean;
 };
 
-const Button = ({ onClick, children, fullWidth }: ButtonProps) => {
+const Button = ({ onClick, children, fullWidth, disabled }: ButtonProps) => {
   return (
-    <S.Button onClick={onClick} fullWidth={fullWidth}>
+    <S.Button onClick={onClick} fullWidth={fullWidth} disabled={disabled}>
       {children}
     </S.Button>
   );

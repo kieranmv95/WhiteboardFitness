@@ -28,11 +28,27 @@ export const ArticlesGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
+  grid-gap: 1rem;
+
   @media ${device.laptop} {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   @media ${device.desktop} {
     grid-gap: 2rem;
+  }
+`;
+
+export const Post = styled.div`
+  p {
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01rem;
+  }
+
+  a {
+    color: ${(props) => props.theme.colors.secondary};
+    text-decoration: none;
+    border-bottom: 0.125rem solid ${({ theme }) => theme.colors.main};
   }
 `;
