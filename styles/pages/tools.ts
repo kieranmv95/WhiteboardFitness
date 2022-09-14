@@ -5,6 +5,7 @@ export const ToolCard = styled.div`
   padding: 1rem;
   border-radius: ${({ theme }) => theme.borderRadius.xs};
   border: 0.0625rem solid ${({ theme }) => theme.colors.secondaryLight};
+  margin-bottom: 1rem;
 
   h2 {
     margin: 0;

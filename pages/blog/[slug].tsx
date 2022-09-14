@@ -8,6 +8,7 @@ import Head from "next/head";
 
 import * as PageStyles from "../../styles/pages/shared";
 import * as S from "../../styles/pages/blogSlug";
+import { setgroups } from "process";
 
 type PostPageProps = {
   frontmatter: Frontmatter;

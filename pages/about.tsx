@@ -65,7 +65,9 @@ const About: NextPage<{ posts: PostData[] }> = ({ posts }) => {
               -{" "}
               <Link href="/tools/percentage-calculator">
                 1RM Percentage breakdown calculator
-              </Link>
+              </Link>{" "}
+              <br />-{" "}
+              <Link href="/tools/rep-round-counter">Rep / Round Counter</Link>
             </p>
           </PageStyles.Post>
         </PageStyles.Container>

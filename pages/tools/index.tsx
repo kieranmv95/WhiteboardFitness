@@ -36,6 +36,18 @@ const Tools: NextPage = () => {
               <Button>Go to Percentage Calculator</Button>
             </Link>
           </S.ToolCard>
+          <S.ToolCard>
+            <h2>Rep/Round counter</h2>
+            <p>
+              Losing track of your reps or rounds on an AMRAP or when working
+              out. It gets suprisingly hard to count when your in a hole dying
+              on a sweaty workout. Use this giant button to keep track of your
+              rounds.
+            </p>
+            <Link href="/tools/rep-round-counter">
+              <Button>Go to Rep/Round counter</Button>
+            </Link>
+          </S.ToolCard>
           <PageStyles.Title>More tools coming soon</PageStyles.Title>
           <p>
             These tools are currently under development so please check back
