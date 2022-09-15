@@ -60,7 +60,7 @@ const Tools: NextPage = () => {
               your workout. Setup a simple countdown or countup or get fancy and
               setup rounds and rest periods with the highly customisable timer.
             </p>
-            <Button disabled>Go to Percentage Calculator</Button>
+            <Button disabled>Coming Soon</Button>
           </S.ToolCard>
         </PageStyles.Container>
       </main>
