@@ -2,7 +2,7 @@
 title: "Welcome to Whiteboard Fitness"
 description: "The first post from The Fitness Corner and what you can expect in the future"
 img: /images/blog/cleanandjerk.jpeg
-date: "2022-09-15"
+date: "2022-09-26"
 author: "Kieran Venison"
 type: "news"
 published: true

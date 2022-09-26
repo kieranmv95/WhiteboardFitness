@@ -8,7 +8,6 @@ const usePageViewTracking = () => {
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      console.log(url);
       ga.pageview(url);
     };
 
