@@ -21,7 +21,7 @@ const Home: NextPage<{ posts: PostData[]; featured: PostData }> = ({
           <FeaturedBlogCard
             title={featured.frontmatter.title}
             description={featured.frontmatter.description}
-            link={`blog/${featured.slug}`}
+            link={`/blog/${featured.slug}`}
             author={featured.frontmatter.author}
             imageSrc={featured.frontmatter.img}
           />
@@ -33,7 +33,7 @@ const Home: NextPage<{ posts: PostData[]; featured: PostData }> = ({
               <MiniBlogCard
                 key={slug}
                 title={frontmatter.title}
-                link={`blog/${slug}`}
+                link={`/blog/${slug}`}
                 imageSrc={frontmatter.img}
               />
             ))}

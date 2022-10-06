@@ -8,6 +8,7 @@ import Seo from "../../components/Seo";
 
 import * as PageStyles from "../../styles/pages/shared";
 import * as S from "../../styles/pages/blogSlug";
+import BlogMeta from "../../components/BlogMeta";
 
 type PostPageProps = {
   frontmatter: Frontmatter;
@@ -21,6 +22,7 @@ const PostPage: NextPage<PostPageProps> = ({ frontmatter, content }) => {
       <main>
         <PageStyles.Container>
           <PageStyles.Title>{frontmatter.title}</PageStyles.Title>
+          <BlogMeta name={frontmatter.author} date={frontmatter.date} />
           <S.ImageHolder>
             <Image
               src={frontmatter.img}
