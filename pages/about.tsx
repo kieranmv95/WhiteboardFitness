@@ -53,7 +53,7 @@ const About: NextPage<{ posts: PostData[] }> = ({ posts }) => {
                 <MiniBlogCard
                   key={slug}
                   title={frontmatter.title}
-                  link={`blog/${slug}`}
+                  link={`/blog/${slug}`}
                   imageSrc={frontmatter.img}
                 />
               ))}
