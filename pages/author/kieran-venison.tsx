@@ -46,16 +46,16 @@ const KieranVenison: NextPage<{ posts: PostData[] }> = ({ posts }) => {
 
           <p>
             This is only a side gig from my full-time job as a Software
-            Developer but when I'm not working or doing CrossFit I can be found
-            mountain biking, rock climbing or playing games.
+            Developer but when I&apos;m not working or doing CrossFit I can be
+            found mountain biking, rock climbing or playing games.
           </p>
 
           <p>
             When it comes to fitness, I started getting fit to be a more
-            well-rounded and healthy person. But now it's gone past the point of
-            being just healthy and its started being a part of what brings me
-            enjoyment. I have found a love for Olympic lifting and CrossFit
-            which enables me to jump into most sports with ease.
+            well-rounded and healthy person. But now it&apos;s gone past the
+            point of being just healthy and its started being a part of what
+            brings me enjoyment. I have found a love for Olympic lifting and
+            CrossFit which enables me to jump into most sports with ease.
           </p>
 
           <h2>Kieran Venisons recent posts</h2>
