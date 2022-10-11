@@ -27,7 +27,7 @@ export const Container = styled.div`
 export const ArticlesGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-
+  margin-bottom: 1rem;
   grid-gap: 1rem;
 
   @media ${device.laptop} {

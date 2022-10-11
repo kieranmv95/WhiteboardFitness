@@ -30,3 +30,7 @@ export const Role = styled.div`
 `;
 
 export const AuthorText = styled.div``;
+
+export const PostsButton = styled.div`
+  margin-top: 1rem;
+`;

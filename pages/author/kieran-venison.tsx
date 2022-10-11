@@ -9,6 +9,8 @@ import * as S from "../../styles/pages/author";
 import matter from "gray-matter";
 import { PostData } from "../../types/PostData";
 import MiniBlogCard from "../../components/Blog/MiniBlogCard";
+import { Button } from "../../components/Button/styles";
+import Link from "next/link";
 
 const KieranVenison: NextPage<{ posts: PostData[] }> = ({ posts }) => {
   return (
@@ -34,6 +36,12 @@ const KieranVenison: NextPage<{ posts: PostData[] }> = ({ posts }) => {
               <S.Role>Author - Founder</S.Role>
             </S.AuthorText>
           </S.TitleContainer>
+
+          <S.PostsButton>
+            <Link href="/blog/author/kieran-venison">
+              <Button>View all posts</Button>
+            </Link>
+          </S.PostsButton>
 
           <h2>About</h2>
 
