@@ -38,8 +38,36 @@ const PostPage: NextPage<{ posts: PostData[]; author: string }> = ({
 };
 
 export const getStaticPaths = async () => {
+  const toTitleCase = (phrase: string) => {
+    return phrase
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
+  const files = fs.readdirSync("posts");
+
+  const paths = files
+    .map((filename) => {
+      const readFile = fs.readFileSync(`posts/${filename}`, "utf-8");
+
+      const { data: frontmatter } = matter(readFile);
+      return frontmatter.author.toLowerCase().replace(" ", "-");
+    })
+    .filter((item, pos, self) => {
+      return self.indexOf(item) === pos;
+    })
+    .map((author) => ({
+      params: {
+        name: author,
+      },
+    }));
+
+  console.log(paths);
+
   return {
-    paths: [],
+    paths,
     fallback: "blocking",
   };
 };
